@@ -5,6 +5,7 @@ const router = express.Router()
 router.get('/', async (req, res) => {
     try {
         const allProjects = await db.find()
+        console.log(allProjects)
         res.json({ message: `Successfully found all projects`, allProjects})
     } catch (error) {
         res.status(500).json({ error: `There was an error retrieving projects from server`, error})

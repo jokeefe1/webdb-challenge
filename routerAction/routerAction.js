@@ -4,7 +4,9 @@ const router = express.Router()
 
 router.get('/', async (req, res) => {
     try {
+        console.log('Test')
         const allActions = await db.find()
+        console.log(allActions)
         res.json({ message: `Successfully found all actions`, allActions })
     } catch (error) {
         res.status(500).json({ error: `There was an error retrieving actions from server`, error })
